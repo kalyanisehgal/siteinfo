@@ -1,4 +1,4 @@
-## About Generator UI
+## About Site Info
 This module adds Site API key field in the site information form. It also represents page nodes in JSON format if site API key is available.
 
 You can access site information form like this: {base_url}/admin/config/system/site-information
