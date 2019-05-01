@@ -9,6 +9,8 @@ Ex: http://localhost/drupal8/page_json/ABC132UDEY/1
 
 Install this folder in modules/custom folder
 
+Rename siteinfo-master to siteinfo
+
 ## Dependencies
 
 Please enable Serialization module before enabling this module.
