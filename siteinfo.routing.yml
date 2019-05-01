@@ -1,0 +1,7 @@
+siteinfo.content:
+  path: '/page_json/{siteapikey}/{nodeid}'
+  defaults:
+    _controller: '\Drupal\siteinfo\Controller\SiteInfoController::json'
+    _title: 'JSON Representation'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains siteinfo.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() on behalf of siteinfo.module.
+ * @see \Array method Array at Array
+ */
+function siteinfo_form_system_site_information_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  $form['site_information']['siteapikey'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Site API Key'),
+    '#default_value' => \Drupal::state()->get('siteapikey', 'No API Key yet'),
+  );
+  $form['actions']['submit']['#value'] = t('Update Configuration');
+  $form['#submit'][] = 'siteinfo_handler';
+}
+
+/**
+ * Implements hook_handler() on behalf of siteinfo.module.
+ * Submit Handler
+ */
+function siteinfo_handler(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
+	$element = $form['siteapikey'];
+  	$sitekey = $form_state->getValue('siteapikey');
+  
+   \Drupal::state()->set('siteapikey', $sitekey);
+
+   drupal_set_message("Site API Key ".$sitekey." has been updated successfully.",'status');
+}

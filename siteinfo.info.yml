@@ -1,0 +1,11 @@
+name: Site Information
+type: module
+description: 'Modifies site information form and generates display node in JSON format.'
+package: Custom
+# Information added by Drupal.org packaging 
+version: '1.0'
+core: '8.x'
+dependencies:
+  - drupal:serialization
+project: 'drupal'
+
